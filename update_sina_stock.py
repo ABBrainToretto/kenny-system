@@ -6,9 +6,12 @@ import sys
 import xlwt
 import MySQLdb
 reload(sys)
+
+
 sys.setdefaultencoding('utf-8')
 theme_url = "http://guba.sina.com.cn/?s=bar&name=%CD%DA%BE%F210%B1%B6%C5%A3%B9%C9&type=0&page="
 content_url = "http://guba.sina.com.cn"
+
 
 class Theme():
     def __init__(self):
@@ -28,6 +31,8 @@ class Theme():
                 if hasattr(e,'reason'):
                     print u"连接失败",e.reason
         return str(self.theme_data)
+        
+        
 class Getdatalist():
     def __init__(self):
         self.get_html = Theme().get_html_title(2,3)
@@ -46,6 +51,8 @@ class Getdatalist():
         #print self.items[0]
         #print self.href
         return self.href
+        
+        
 class Sql():
     conn = MySQLdb.connect(
             host = "localhost",
@@ -59,6 +66,8 @@ class Sql():
     def mysqldata(self,row,text_title,read_count,article_detail):
         self.cur.execute("insert INTO sina_new_stock VALUES ('%s','%s','%s','%s')" %(row,text_title,read_count,article_detail))
         return
+        
+        
 class Get_article():
     def __init__(self):
         self.hrefdetail = Getdatalist().getlist()
