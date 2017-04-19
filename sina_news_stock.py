@@ -6,9 +6,13 @@ import time,socket
 import sys
 import xlwt
 reload(sys)
+
+
 sys.setdefaultencoding('utf-8')
 theme_url = "http://guba.sina.com.cn/?s=bar&name=%CC%E2%B2%C4%CD%DA%BE%F2%BB%FA&type=0&page="
 content_url = "http://guba.sina.com.cn"
+
+
 
 class Theme():
     def __init__(self):
@@ -28,6 +32,10 @@ class Theme():
                 if hasattr(e,'reason'):
                     print u"连接失败",e.reason
         return str(self.theme_data)
+        
+        
+        
+        
 class Getdatalist():
     def __init__(self):
         self.get_html = Theme().get_html_title(2,4)
@@ -46,6 +54,9 @@ class Getdatalist():
         #print self.items[0]
         #print self.href
         return self.href
+
+
+
 
 class Get_article():
     def __init__(self):
