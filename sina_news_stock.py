@@ -13,7 +13,6 @@ theme_url = "http://guba.sina.com.cn/?s=bar&name=%CC%E2%B2%C4%CD%DA%BE%F2%BB%FA&
 content_url = "http://guba.sina.com.cn"
 
 
-
 class Theme():
     def __init__(self):
         self.user_agent = 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.101 Safari/537.36'
@@ -33,9 +32,7 @@ class Theme():
                     print u"连接失败",e.reason
         return str(self.theme_data)
         
-        
-        
-        
+               
 class Getdatalist():
     def __init__(self):
         self.get_html = Theme().get_html_title(2,4)
@@ -54,8 +51,6 @@ class Getdatalist():
         #print self.items[0]
         #print self.href
         return self.href
-
-
 
 
 class Get_article():
